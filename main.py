@@ -1,5 +1,6 @@
 import os
 from src.data_processing import load_data, preprocess_data
+from src.model import train_model
 
 DATA_DIR = 'data'
 
@@ -14,6 +15,9 @@ def main():
         df = preprocess_data(df)
         print("Processed Data:")
         print(df.head())
+
+        # Train the model
+        model = train_model(df)
 
 if __name__ == "__main__":
     main()
